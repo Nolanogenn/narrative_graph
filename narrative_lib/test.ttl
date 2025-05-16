@@ -1,0 +1,67 @@
+@prefix nr: <https://www.genn.nolalt.org/ontologies/narration#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+nr:TestEnvironmental a nr:EnvironmentalGraph ;
+    nr:contains nr:valonde .
+
+nr:affects a rdf:Property ;
+    rdfs:domain nr:EventNode ;
+    rdfs:range nr:EnvironmentalNode .
+
+nr:connectedTo a rdf:Property ;
+    rdfs:domain nr:Place .
+
+nr:contains a rdf:Property ;
+    rdfs:domain nr:Graph ;
+    rdfs:range nr:Node .
+
+nr:foundIn a rdf:Property ;
+    rdfs:domain nr:EnvironmentalNode ;
+    rdfs:range nr:Place .
+
+nr:generates a rdf:Property ;
+    rdfs:domain nr:BranchinNode ;
+    rdfs:range nr:EnvironmentalGraph .
+
+nr:hasName a rdf:Property ;
+    rdfs:domain nr:Graph ;
+    rdfs:range xsd:string .
+
+nr:EventGraph a skos:Concept ;
+    skos:broader nr:Graph .
+
+nr:Item a skos:Concept .
+
+nr:Npc a skos:Concept .
+
+nr:PlayerNode a skos:Concept .
+
+nr:valonde a nr:Place .
+
+nr:EventNode a skos:Concept ;
+    skos:broader nr:Node ;
+    skos:narrower nr:BranchingNode .
+
+nr:EnvironmentalGraph a skos:Concept ;
+    skos:broader nr:Graph .
+
+nr:EnvironmentalNode a skos:Concept ;
+    skos:broader nr:Node ;
+    skos:narrower nr:Item,
+        nr:Npc,
+        nr:Place .
+
+nr:Node a skos:Concept ;
+    skos:narrower nr:EnvironmentalNode,
+        nr:EventNode,
+        nr:PlayerNode .
+
+nr:Graph a skos:Concept ;
+    skos:narrower nr:EnvironmentalGraph,
+        nr:EventGraph .
+
+nr:Place a skos:Concept .
+

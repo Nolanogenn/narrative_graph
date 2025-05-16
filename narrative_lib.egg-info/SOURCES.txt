@@ -1,0 +1,9 @@
+README.md
+setup.py
+narrative_lib/__init__.py
+narrative_lib/narrative.py
+narrative_lib.egg-info/PKG-INFO
+narrative_lib.egg-info/SOURCES.txt
+narrative_lib.egg-info/dependency_links.txt
+narrative_lib.egg-info/top_level.txt
+test/test_narrative.py
